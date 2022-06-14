@@ -61,8 +61,8 @@ function formatTicks(d) {
 }
 
 function setupCanvas(barChartData) {
-    const svg_width = 400;
-    const svg_height = 500;
+    const svg_width = 500;
+    const svg_height = 600;
     const chart_margin = { top: 80, right: 40, bottom: 40, left: 80 };
     const chart_width = svg_width - (chart_margin.left + chart_margin.right);
     const chart_height = svg_height - (chart_margin.top + chart_margin.bottom);

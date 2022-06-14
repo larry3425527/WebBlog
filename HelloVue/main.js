@@ -1,9 +1,12 @@
 let myData = {
-    firstName
-        : "Larry"
+    Name
+        : "吳皇霖"
     ,
-    lastName
-        : "Wu"
+    Signs
+        : "天秤座"
+    ,
+    StudentID
+        : "1083308"
 };
 const App
     = Vue.createApp({
