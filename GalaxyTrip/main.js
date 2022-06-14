@@ -48,11 +48,30 @@ let pageData = {
         display:'block',
         width:'50%'
         },
-    imageAlt:"Photo from space"        
+    imageAlt:"Photo from space",
+    pname: "",    
+    summary: "",
+    note: "",
+    count: 0,
+    productindex: 0
 };
+
+let pageMethods = {
+    displayOrder() {
+        document.getElementById('form').style.display="";
+        // this.summary = `${this.name}`;
+    },
+    Summary() {
+        this.summary += `${this.pname} - ${this.productClasses[this.productindex].name} ${this.count}張 備註:${this.note}
+        `;
+        document.getElementById('form').style.display="none";
+    },
+};
+
 const app = Vue.createApp({
     data() {
         return pageData;
-    }
+    },
+    methods: pageMethods
 });
 app.mount("#app")

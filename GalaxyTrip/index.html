@@ -19,13 +19,25 @@
                 <td width="20%">US${{productClass.price.toLocaleString('en-US')}}</td>
                 <td>
                     <button style="width: 35%" v-if="productClass.earlyBird" true-value="有" false-value="無" @change="reset_work_experience">Book Earlybird!</button>
-                    <button style="width: 35%" v-else true-value="有" false-value="無" @change="reset_work_experience">Book</button>&nbsp;
+                    <button style="width: 35%" v-else true-value="有" false-value="無"  @click="displayOrder">Book</button>&nbsp;
                     <span v-show="productClass.seatsAvailable < 10" style="color:red">
                         Almost Sold out!
                     </span>
                 </td>
             </tr>
         </table>
+
+       <div style="display:none" id = "form">
+            <select v-model="selectedIndex">
+                <option v-for="(productItem, index) in productClasses" :value="index">{{productItem.name}}</option>
+            </select>
+
+            Name:<input type="text" v-model="pname">
+            Ticket:<input type="text" v-model="count">
+            Note:<input type="text" v-model="note">
+            <button @click="Summary">order</button>
+        </div>
+        {{summary}}
         <img :src="imageSrc[Math.floor(Math.random()*imageSrc.length)]" :style="imageStyleController" :alt="imageAlt"
             :title="imageAlt">>
     </div>
